@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>みつ林 Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>🌲 みつ林 Task Manager</h1>
+</header>
+
+<div class="container">
+
+    <div class="task-input">
+        <input type="text" id="taskName" placeholder="タスク名">
+        <input type="text" id="taskPerson" placeholder="担当者">
+        <input type="date" id="taskDate">
+        <button onclick="addTask()">追加</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>タスク</th>
+                <th>担当</th>
+                <th>期限</th>
+                <th>状態</th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody id="taskList">
+
+        </tbody>
+    </table>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
