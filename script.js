@@ -1,85 +1,26 @@
-let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+body{
 
-function save(){
-    localStorage.setItem("tasks",JSON.stringify(tasks));
-}
-
-function render(){
-
-    const list=document.getElementById("taskList");
-
-    list.innerHTML="";
-
-    tasks.forEach((task,index)=>{
-
-        list.innerHTML+=`
-        <tr>
-            <td>${task.name}</td>
-            <td>${task.person}</td>
-            <td>${task.date}</td>
-
-            <td>
-
-            ${
-                task.done
-                ?'<span class="done"> 完了</span>'
-                :'<button onclick="finishTask('+index+')">完了</button>'
-            }
-
-            </td>
-
-            <td>
-                <button onclick="deleteTask(${index})">削除</button>
-            </td>
-
-        </tr>
-        `;
-
-    });
+    font-family:sans-serif;
+    margin:40px;
 
 }
 
-function addTask(){
+input{
 
-    const name=document.getElementById("taskName").value;
-    const person=document.getElementById("taskPerson").value;
-    const date=document.getElementById("taskDate").value;
-
-    if(name=="") return;
-
-    tasks.push({
-        name:name,
-        person:person,
-        date:date,
-        done:false
-    });
-
-    save();
-    render();
-
-    document.getElementById("taskName").value="";
-    document.getElementById("taskPerson").value="";
-    document.getElementById("taskDate").value="";
-}
-
-function finishTask(index){
-
-    tasks[index].done=true;
-
-    save();
-
-    render();
+    width:250px;
+    padding:5px;
+    margin-bottom:10px;
 
 }
 
-function deleteTask(index){
+button{
 
-    tasks.splice(index,1);
-
-    save();
-
-    render();
+    padding:5px 15px;
 
 }
 
-render();
+li{
+
+    margin:10px 0;
+
+}
