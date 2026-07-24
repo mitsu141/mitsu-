@@ -22,7 +22,7 @@ function render(){
 
             ${
                 task.done
-                ?'<span class="done">✅ 完了</span>'
+                ?'<span class="done"> 完了</span>'
                 :'<button onclick="finishTask('+index+')">完了</button>'
             }
 
